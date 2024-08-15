@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Preload y carga de hojas de estilo -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -17,16 +16,22 @@
     <!-- Carga de fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto&family=Tilt+Warp&display=swap" rel="stylesheet">
     
-    <title>Escalandia - Muros Móviles a tú evento</title>
+    <title>Escalandia - Muros Móviles para tu evento</title>
+
+    <!-- Metadatos para SEO -->
+    <meta name="description" content="Arriendo de muros de escalada y slacklines para eventos como cumpleaños, activaciones de marca, y festivales. Contáctanos para cotizar.">
+    <meta name="keywords" content="muro de escalada a domicilio, slackline para eventos, alquiler muro de escalada, escalada para eventos escolares, actvidades al aire libre, escalada segura para eventos, actividades corporativas al aire libre, escalada, slackline cumpleaños, diversión segura para eventos, eventos de escalada tú casa, slackline instalación, muro de escalada móvil, eventos deportivos al aire libre, entretenimiento para eventos en tú hogar, arriendo muros de escalada para cumpleaños al aire libre">
+    <meta name="author" content="Piero Nicolini">
 </head>
+
 <body>
 
     <header>
         <!-- Sección de parallax -->
-        <section class="parallax-section">
+        <section class="parallax-section" id="inicio">
             <section class="container">
                 <a href="http://www.instagram.com/escalandia" class="logo">
-                    <img class="mainlogo tambaleando" src="image/big_escalandia.png" alt="Escaladamallmarina">
+                    <img class="mainlogo tambaleando" src="image/big_escalandia.png" alt="Muro de escalada para eventos corporativos en tú hogar">
                 </a>
                 <div class="muro">
                     <h1>¡Arriendo de muros de escalada para eventos!</h1>
@@ -55,78 +60,87 @@
 
     <nav id="navbar">
         <ul>
-            <img class="navimg tambaleando" src="image/mini_escalandia.png" alt="">
-            <li><a href="#about">Experiencias</a></li>
+            <a href="http://www.instagram.com/escalandia" class="logo">
+                <img class="navlogo" src="image/mini_escalandia.png" alt="Logo Escalandia">
+            </a>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#experiencia">Experiencias</a></li>
             <li><a href="#mision">Misión</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#contact">Contacto</a></li>
-            <button class="botonpink tambaleando">Cotizar</button>
+            <li><a href="#servicio">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <button class="botonpink tambaleando sacudir">Cotizar</button>
         </ul>
     </nav>
 
     <main>
-        <!-- Sección de Momentos Inolvidables -->
-        <section class="momentos">
+        <!-- Sección de experiencias inolvidables -->
+        <section class="experiencias">
             <div class="contenedorinstantaneas">
                 <div class="instantanea rotate-left">
-                    <img src="image/Colegio 2.jpg" alt="Foto 1">
+                    <img src="image/Colegio 2.jpg" alt="escalandiando 1" loading="lazy">
                 </div>
                 <div class="instantanea rotate-center">
-                    <img src="image/Colegio 4.jpg" alt="Foto 2">
+                    <img src="image/Colegio 4.jpg" alt="escalandiando 2" loading="lazy">
                 </div>
                 <div class="instantanea rotate-right">
-                    <img src="image/Colegio 3.jpg" alt="Foto 3">
+                    <img src="image/Colegio 3.jpg" alt="escalandiando 3" loading="lazy">
                 </div>
             </div>
-            <div class="momentums">
-                <h2 class="shining-text">Momentos Inolvidables</h2>
+            <div id="experiencia" class="inolvidables tambaleando">
+                <h2 class="efectobrillo">Momentos Inolvidables</h2>
+                <img class="ig" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" loading="lazy">
                 <a href="http://www.instagram.com/escalandia">
-                    <button class="botonig">MÁS MOMENTOS</button>
+                    <button class="botonig sacudir">más experiencias</button>
                 </a>
             </div>
             <div class="contenedorinstantaneas">
                 <div class="instantanea rotate-left">
-                    <img src="image/Casa 2.jpg" alt="Foto 4">
+                    <img src="image/Casa 2.jpg" alt="escalandiando 4" loading="lazy">
                 </div>
                 <div class="instantanea rotate-center">
-                    <img src="image/slack 1.jpg" alt="Foto 5">
+                    <img src="image/slack 1.jpg" alt="escalandiando 5" loading="lazy">
                 </div>
                 <div class="instantanea rotate-right">
-                    <img src="image/Muro Desplome 3.jpg" alt="Foto 6">
+                    <img src="image/Muro Desplome 3.jpg" alt="escalandiando 6" loading="lazy">
                 </div>
             </div>
         </section>
         
         <!-- Sección de Misión -->
-        <section class="pinkblue">
+        <section id="mision" class="pinkblue">
             <div class="mision-cont">
-                <img src="image/big_escalandia.png" alt="Logo" class="mainlogo tambaleando">
+                <img src="image/big_escalandia.png" alt="Logo Escalandia" class="mainlogo sacudir" loading="lazy">
                 <p class="mision">"Nuestra misión es proporcionar experiencias emocionantes de deportes alternativos -como escalada y slackline- fomentando la diversión y unión a través de desafíos seguros."</p>
             </div>
         </section>
 
+        <section id="servicio" class="pinkblue">
+            <div>
+            </div>
+        </section>
+
         <!-- Sección de Contacto -->
-        <section class="formu">
+        <section id="contacto" class="contacto">
             <h2>Contacto</h2>
             <form class="formulario">
                 <fieldset>
                     <legend class="legend">Contáctanos y conversemos</legend>
                     <div class="contenedor-campos">
                         <div class="campo">
-                            <label>Nombre</label>
-                            <input class="input-text" type="text" placeholder="Tú Nombre">
+                            <label for="nombre">Nombre</label>
+                            <input id="nombre" class="input-text" type="text" placeholder="Tu Nombre" required>
                         </div>
                         <div class="campo">
-                            <label>Teléfono</label>
-                            <input class="input-text" type="tel" placeholder="Fono contacto">
+                            <label for="telefono">Teléfono</label>
+                            <input id="telefono" class="input-text" type="tel" placeholder="Fono contacto" required>
                         </div>
                         <div class="campo">
-                            <label>Email</label>
-                            <input class="input-text" type="email" placeholder="correo">
+                            <label for="email">Email</label>
+                            <input id="email" class="input-text" type="email" placeholder="Correo" required>
                         </div>
                         <div class="campo">
-                            <label>Mensaje</label>
-                            <textarea class="input-text"></textarea>
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" class="input-text" placeholder="Escribe tu mensaje aquí" required></textarea>
                         </div>
                     </div>    
                     <div class="enviar">
@@ -141,5 +155,18 @@
         <p>Todos los derechos reservados. Piero Nicolini Freelancer</p>
     </footer>
 
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
