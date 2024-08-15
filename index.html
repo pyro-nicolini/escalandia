@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Preload y carga de hojas de estilo -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconexiones para optimizar la carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Carga de fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto&family=Tilt+Warp&display=swap" rel="stylesheet">
+    
+    <title>Escalandia - Muros Móviles a tú evento</title>
+</head>
+<body>
+
+    <header>
+        <!-- Sección de parallax -->
+        <section class="parallax-section">
+            <section class="container">
+                <a href="http://www.instagram.com/escalandia" class="logo">
+                    <img class="mainlogo tambaleando" src="../image/big_escalandia.png" alt="Escaladamallmarina">
+                </a>
+                <div class="muro">
+                    <h1>¡Arriendo de muros de escalada para eventos!</h1>
+                </div>
+                <div class="info">
+                    <h3>Escalada y Slacklines para cumpleaños, eventos de empresas, RSE, Festivales, Activaciones de marca, etc.</h3>
+                </div>
+                <div class="call">
+                    <button class="botonpink">cotiza flash!</button>
+                </div>
+            </section>
+        </section>
+        
+        <!-- Script para cambiar la navegación al hacer scroll -->
+        <script>
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <img class="navimg tambaleando" src="../image/mini_escalandia.png" alt="">
+            <li><a href="#about">Experiencias</a></li>
+            <li><a href="#mision">Misión</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <button class="botonpink tambaleando">Cotizar</button>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección de Momentos Inolvidables -->
+        <section class="momentos">
+            <div class="contenedorinstantaneas">
+                <div class="instantanea rotate-left">
+                    <img src="../image/Colegio 2.jpg" alt="Foto 1">
+                </div>
+                <div class="instantanea rotate-center">
+                    <img src="../image/Colegio 4.jpg" alt="Foto 2">
+                </div>
+                <div class="instantanea rotate-right">
+                    <img src="../image/Colegio 3.jpg" alt="Foto 3">
+                </div>
+            </div>
+            <div class="momentums">
+                <h2 class="shining-text">Momentos Inolvidables</h2>
+                <a href="http://www.instagram.com/escalandia">
+                    <button class="botonig">MÁS MOMENTOS</button>
+                </a>
+            </div>
+            <div class="contenedorinstantaneas">
+                <div class="instantanea rotate-left">
+                    <img src="../image/Casa 2.jpg" alt="Foto 4">
+                </div>
+                <div class="instantanea rotate-center">
+                    <img src="../image/slack 1.jpg" alt="Foto 5">
+                </div>
+                <div class="instantanea rotate-right">
+                    <img src="../image/Muro Desplome 3.jpg" alt="Foto 6">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Misión -->
+        <section class="pinkblue">
+            <div class="mision-cont">
+                <img src="../image/big_escalandia.png" alt="Logo" class="mainlogo tambaleando">
+                <p class="mision">"Nuestra misión es proporcionar experiencias emocionantes de deportes alternativos -como escalada y slackline- fomentando la diversión y unión a través de desafíos seguros."</p>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section class="formu">
+            <h2>Contacto</h2>
+            <form class="formulario">
+                <fieldset>
+                    <legend class="legend">Contáctanos y conversemos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" placeholder="Tú Nombre">
+                        </div>
+                        <div class="campo">
+                            <label>Teléfono</label>
+                            <input class="input-text" type="tel" placeholder="Fono contacto">
+                        </div>
+                        <div class="campo">
+                            <label>Email</label>
+                            <input class="input-text" type="email" placeholder="correo">
+                        </div>
+                        <div class="campo">
+                            <label>Mensaje</label>
+                            <textarea class="input-text"></textarea>
+                        </div>
+                    </div>    
+                    <div class="enviar">
+                        <input class="botonpink" type="submit" value="Enviar">
+                    </div>    
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados. Piero Nicolini Freelancer</p>
+    </footer>
+
+</body>
+</html>

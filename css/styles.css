@@ -1,0 +1,454 @@
+:root {
+    --mainfont: #ffffff;
+    --blue: #008cff;
+    --pink: #ff009d;
+    --gris: #757575;
+    --oscuro: #272727;
+    --fondo: #ffffff;
+}
+
+.pinkblue {
+    background: linear-gradient(to bottom, #ff5fcf, hsl(216, 100%, 54%));
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*GLOBALES*/
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fondo);
+    font-size: 2rem; /* Tamaño base del texto */
+    line-height: 1.1;
+}
+
+p, h1, h2, h3, legend {
+    color: var(--mainfont);
+}
+
+p, a, label {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    
+}
+
+footer, footer p {
+    color: var(--pink);
+    text-align: center; /* Centrar el contenido del footer */
+    background-color: var(--oscuro);
+    padding: .1rem;
+    font-size: 1.5rem;
+}
+
+nav {
+    padding: 10px;
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    z-index: 1000; /* Asegura que el menú quede por encima de otros elementos */
+}
+
+/* Contenedor del nav */
+#navbar {
+    position: fixed;
+    min-height: 5rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.418);
+    transition: background-color 0.3s ease;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#navbar ul li a {
+    font-weight: 500;
+    color: var(--fondo);
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.navimg {
+    width: 200px;
+}
+
+/* Efecto cuando scroleas */
+.scrolled {
+    background-color: var(--fondo) !important;
+}
+
+.scrolled ul li a {
+    color: var(--pink) !important;
+}
+
+
+/* Estilo base para la sección parallax */
+.parallax-section {
+    top: 0;
+    background-image: 
+        linear-gradient(rgba(234, 0, 255, 0.589), rgba(251, 255, 0, 0.719)), /* Degradado encima de la imagen */
+        url(../image/escalandia_hero.jpg); /* Imagen de fondo */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Sección grilla del parallax */
+.container {
+    max-width: 120rem;
+    width: 95%;
+    padding: 10rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas automáticas */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.76);
+    justify-content: center;
+}
+
+.muro {
+    text-align: end;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    max-height: max-content;
+}
+
+.logo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+
+}
+
+.mainlogo {
+    min-width: 280px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.info {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+
+.call {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+/*efecto tambaleo logo*/
+@keyframes tambalear {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-2deg); }
+    40% { transform: rotate(2deg); }
+    60% { transform: rotate(-2deg); }
+    80% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.tambaleando {
+    display: inline-block;
+    animation: tambalear 4s infinite; /* La animación se repite cada 2 segundos */
+}
+
+
+
+/* Botones */
+.botonpink, .botonig {
+    color: var(--mainfont);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 2rem;
+    padding: 15px 32px; /* Relleno interno del botón */
+    border: none;
+    
+}
+
+.botonpink {
+    background-color: var(--pink);
+    animation: sacudir 10s ease-in-out 5s infinite; /* 0.5s sacudida + 1s pausa */
+    display: inline-block;
+}
+
+.botonpink:hover {
+    background-color: #9b21ff; /* Color más oscuro al pasar el mouse */
+}
+
+.botonig {
+    margin: auto;
+    background-color: #ffae00; /* Color de fondo */
+    width: 200px;
+    height: 60px;
+    font-size: 2rem; /* Tamaño de la fuente */
+}
+
+.botonig:hover {
+    background-color: #fbff07d0; /* Color más oscuro al pasar el mouse */
+}
+
+/*efecto boton sacudido*/
+@keyframes sacudir {
+    0%, 100% { transform: translateY(0); } /* Posición inicial y final */
+    10%, 30%, 50%, 70%, 90% { transform: translateY(-5px); } /* Movimiento hacia arriba */
+    20%, 40%, 60%, 80% { transform: translateY(5px); } /* Movimiento hacia abajo */
+}
+
+
+
+
+/* Momentos */
+.momentos h2, .momentos p, .momentos button {
+    color: #ffffff;
+   padding: 1px;
+}
+
+.momentos {
+    text-align: center;
+}
+
+.momentums {
+    margin-bottom: 5rem;
+}
+
+/* contenedor instantaneas */
+.contenedorinstantaneas {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    padding-top: 2rem;
+}
+
+.instantanea {
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.instantanea img {
+    display: block;
+}
+
+/* Rotaciones específicas para cada foto */
+.rotate-left {
+    transform: rotate(-25deg);
+}
+
+.rotate-center {
+    transform: rotate(10deg);
+}
+
+.rotate-right {
+    transform: rotate(-13deg);
+}
+
+/* Quitar la rotación al pasar el mouse */
+.instantanea:hover {
+    transform: rotate(0deg);
+}
+
+/* Texto brillante */
+.shining-text {
+    font-size: 10rem;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #6200ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    animation: shine 1s infinite alternate;
+}
+
+/* animación brillante */
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #8400ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #6505ff, 0 0 120px #ff00ff;
+    }
+    50% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ffb20b, 0 0 70px #ff00ff, 0 0 120px #9e006f;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #2600ff, 0 0 120px #fffb01;
+    }
+}
+
+/* Sección degradada */
+.mision-cont {
+    padding: 5rem 20rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mision {
+    font-size: 3rem;
+}
+
+
+/* Formulario */
+.legend {
+    padding: 2rem;
+}
+
+.formu {
+    padding: 1rem;
+    text-align: center;
+}
+
+.formu h2 {
+    color: var(--pink);
+}
+
+.formulario {
+    background-color: var(--gris);
+    width: min(100rem, 100%);
+    border-radius: 2rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.contenedor-campos {
+    color: white;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-text {
+    display: block;
+    min-width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.enviar .botonpink {
+    width: 100%;
+}
+
+@media (max-width: 768px) { /* Estilos responsivos para pantallas pequeñas */
+    nav ul {
+        justify-content: space-between;
+        margin-right: 0;
+        padding: auto; /* Eliminar el padding para que los elementos del menú se ajusten mejor */
+    }
+
+    nav ul li {
+        display: none;
+    }
+
+    .parallax-section {
+        background-size: cover;
+    }
+
+    .container {
+        display: flex;
+        padding: 10rem 5rem;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 10px;
+        padding-bottom: 25px;
+    }
+
+    .info h2 {
+        text-align: center;
+    }
+
+    .muro,.info {
+        margin: 0;
+        text-align: center;
+    }
+
+    .muro {
+        line-height: 1;
+    }
+
+    .call {
+        padding-top: 2rem;
+    }
+
+    .contenedorinstantaneas {
+        display: grid;
+        align-items: center;
+    }
+    
+    .shining-text {
+        font-size: 5rem;
+    }
+
+    .mision-cont {
+        padding: 5rem 2rem;
+
+}
