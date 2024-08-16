@@ -3,7 +3,7 @@
     --blue: #008cff;
     --pink: #ff009d;
     --gris: #757575;
-    --grisclaro: #a8a8a8;
+    --grisclaro: #8b8b8bc0;
     --oscuro: #272727;
     --fondo: #ffffff;
 }
@@ -22,14 +22,6 @@ html, body {
     overflow-x: hidden;
 }
 
-body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--fondo);
-    font-size: 2rem; /* Tamaño base del texto */
-    line-height: 1.1;
-}
-
 p, h1, h2, h3, legend {
     color: var(--mainfont);
 }
@@ -38,9 +30,17 @@ p, a, label {
     font-size: 2rem;
 }
 
-h1 { font-size: 6rem; }
-h2 { font-size: 4rem; }
-h3 { font-size: 3rem; }
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
 
 label {
     font-weight: bold;
@@ -55,14 +55,10 @@ footer {
     text-align: center;
     background-color: var(--oscuro);
     padding: 1rem;
-    font-size: 1rem;
-}
-
-footer p{
     font-size: 1.5rem;
 }
 
-
+/* Estilos de navegación */
 nav {
     position: fixed;
     top: 0;
@@ -108,6 +104,7 @@ nav {
     color: var(--pink) !important;
 }
 
+/* Sección parallax */
 .parallax-section {
     background-image: linear-gradient(rgba(234, 0, 255, 0.589), rgba(251, 255, 0, 0.719)), url(../image/escalandia_hero.jpg);
     background-attachment: fixed;
@@ -120,23 +117,24 @@ nav {
     color: white;
 }
 
-
+/* Contenedor principal */
 .container {
     max-width: 120rem;
     width: 95%;
     padding: 10rem 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    grid-template-rows: auto auto; /* Dos filas automáticas */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     justify-content: center;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
+/* Estilos específicos de los elementos */
 .muro {
     text-align: end;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     max-height: max-content;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 .logo {
@@ -161,7 +159,6 @@ nav {
     text-align: right;
 }
 
-
 .call {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -169,8 +166,10 @@ nav {
     align-items: center;
     gap: 10px;
     justify-content: center;
+    padding: 2rem;
 }
 
+/* Animaciones */
 @keyframes tambalear {
     0%, 100% { transform: rotate(0deg); }
     20% { transform: rotate(-2deg); }
@@ -181,9 +180,10 @@ nav {
 
 .tambaleando {
     display: inline-block;
-    animation: tambalear 4s infinite;
+    animation: tambalear 5s infinite;
 }
 
+/* Botones */
 .botonpink, .botonig {
     color: var(--mainfont);
     cursor: pointer;
@@ -203,6 +203,15 @@ nav {
     background-color: #9b21ff;
 }
 
+.botonig {
+    background-color: #ffae00;
+}
+
+.botonig:hover {
+    background-color: #fbff07d0;
+}
+
+/* Animaciones de botón */
 @keyframes sacudir {
     0%, 100% { transform: translateY(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateY(-5px); }
@@ -214,6 +223,7 @@ nav {
     display: inline-block;
 }
 
+/* Sección de experiencias */
 .experiencias h2, .experiencias p, .experiencias button {
     text-align: center;
 }
@@ -238,14 +248,7 @@ nav {
     padding: 5rem 0 10rem 0;
 }
 
-.botonig {
-    background-color: #ffae00;
-}
-
-.botonig:hover {
-    background-color: #fbff07d0;
-}
-
+/* Contenedor de instantáneas */
 .contenedorinstantaneas {
     display: flex;
     justify-content: space-evenly;
@@ -267,17 +270,17 @@ nav {
     display: block;
 }
 
-.rotate-left { transform: rotate(-25deg); }
+.rotate-left { transform: rotate(-15deg); }
 .rotate-center { transform: rotate(10deg); }
-.rotate-right { transform: rotate(-13deg); }
+.rotate-right { transform: rotate(-10deg); }
 
 .instantanea:hover {
     transform: rotate(0deg);
 }
 
+/* Texto brillante */
 .efectobrillo {
     color: #fff;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #6200ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
     animation: shine 1s infinite alternate;
 }
 
@@ -293,23 +296,13 @@ nav {
     }
 }
 
-ul {
-    list-style-type: square; /* Opciones comunes incluyen disc, circle, square, none, etc. */
-}
-
-ol {
-    list-style-type: upper-roman; /* Opciones incluyen lower-alpha, upper-alpha, lower-roman, upper-roman, etc. */
-}
-
-
-
+/* Sección de servicios */
 .servicio-content {
     margin: 10rem 0;
     background-color: var(--fondo);
     justify-items: center;
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .container2 {
@@ -318,7 +311,6 @@ ol {
     background-color: var(--grisclaro);
     width: 45%;
     padding: 0 3rem;
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 .container2 p {
@@ -327,10 +319,9 @@ ol {
 }
 
 .container2 h2 {
-    color: var(--blue);
+    color: var(--pink);
     text-align: center;
-    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.7));
-
+    text-transform: uppercase;
 }
 
 .container2 h3 {
@@ -338,42 +329,23 @@ ol {
     font-size: 2rem;
 }
 
-.serv1,.serv2,.serv3,.serv4, .serv5,.serv6 {
-    max-width: 100&;
-    margin:0 auto;
+.call2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Secciones de los servicios */
+.serv1, .serv2, .serv3, .serv4, .serv5, .serv6 {
     display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
-.serv1 {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.serv2 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.serv3 {
-    grid-column: 1 / 2;
-    grid-row: 3 / 3;
-}
-
-.serv4 {
-    grid-column: 2 / 2;
-    grid-row: 1 / 2;
-}
-
-.serv5 {
-    grid-column: 2 / 2;
-    grid-row: 2 / 3;
-}
-
-.serv6 {
-    grid-column: 2 / 2;
-    grid-row: 3 / 3;
-}
-
+/* Sección de misión */
 .pinkblue {
     background: linear-gradient(to bottom, #ff5fcf, hsl(216, 100%, 54%));
     width: 100%;
@@ -390,10 +362,10 @@ ol {
     font-size: 3rem;
 }
 
+/* Sección de contacto */
 .contacto h2 {
     text-align: center;
     color: var(--pink);
-
 }
 
 .formulario {
@@ -444,6 +416,7 @@ ol {
     width: 100%;
 }
 
+/* Estilos responsivos */
 @media (max-width: 768px) {
     nav ul {
         justify-content: space-between;
@@ -480,12 +453,13 @@ ol {
     }
 
     .call {
-        padding-top: 2rem;
+        padding: 2rem;
     }
 
     .contenedorinstantaneas {
         display: grid;
         align-items: center;
+        width: 90%;
     }
 
     .experiencias h2 {
@@ -503,10 +477,8 @@ ol {
     .servicio-content {
         display: grid;
     }
-    
+
     .container2 {
         width: 90%;
     }
-
-
 }

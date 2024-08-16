@@ -1,175 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Preload y carga de hojas de estilo -->
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Preload de sonido de fondo -->
     <audio preload="auto" id="backgroundSound" src="/sound/wow.mp3"></audio>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Preconexiones para optimizar la carga de fuentes -->
+    <!-- Preconexiones para optimizar la carga de fuentes y recursos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Carga de fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto&family=Tilt+Warp&display=swap" rel="stylesheet">
-    
+    <link rel="prefetch" href="image/big_escalandia.webp" as="image">
+    <link rel="prefetch" href="image/mini_escalandia.webp" as="image">
+
+    <!-- Carga de fuentes con font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto&family=Tilt+Warp&display=swap" rel="stylesheet" />
+    <style>
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            src: url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+            font-display: swap;
+        }
+
+        /* Critical CSS: Coloca aquí el CSS mínimo para renderizar el contenido visible */
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+        header {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 70vh;
+        }
+        .muro {
+            text-align: center;
+            transform: translateY(10px);
+            will-change: transform;
+        }
+        .botonpink {
+            background-color: #ff009d;
+            border-radius: 30px;
+            font-size: 2rem;
+            padding: 15px 32px;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+    </style>
+
     <title>Escalandia - Muros Móviles para tu evento</title>
+
     <!-- Metadatos para SEO -->
     <meta name="description" content="Arriendo de muros de escalada y slacklines para eventos como cumpleaños, activaciones de marca, y festivales. Contáctanos para cotizar.">
     <meta name="keywords" content="muro de escalada a domicilio, slackline para eventos, alquiler muro de escalada, escalada para eventos escolares, actvidades al aire libre, escalada segura para eventos, actividades corporativas al aire libre, escalada, slackline cumpleaños, diversión segura para eventos, eventos de escalada tú casa, slackline instalación, muro de escalada móvil, eventos deportivos al aire libre, entretenimiento para eventos en tú hogar, arriendo muros de escalada para cumpleaños al aire libre">
     <meta name="author" content="Piero Nicolini">
 </head>
+
 <body onload="playSound();">
     <header>
         <!-- Sección de parallax -->
-        <section class="parallax-section" id="inicio">
-            <section class="container">
-                <a href="http://www.instagram.com/escalandia" class="logo">
-                    <img class="mainlogo tambaleando" src="image/big_escalandia.png" alt="Muro de escalada para eventos corporativos en tú hogar">
+        <section class="parallax-section" id="inicio" aria-labelledby="inicio">
+            <section class="container" aria-label="Contenedor principal">
+                <a href="http://www.instagram.com/escalandia" class="logo" aria-label="Ir a Instagram de Escalandia">
+                    <picture>
+                        <source srcset="image/big_escalandia.webp" type="image/webp">
+                        <source srcset="image/big_escalandia.png" type="image/png">
+                        <img class="mainlogo tambaleando" src="image/big_escalandia.png" alt="Muro de escalada para eventos corporativos en tu hogar">
+                    </picture>
                 </a>
-                <div class="muro">
+                <div class="muro" aria-live="polite">
                     <h1>¡Arriendo de muros de escalada para eventos!</h1>
                 </div>
                 <div class="info">
                     <h3>Escalada y Slacklines para cumpleaños, eventos de empresas, RSE, Festivales, Activaciones de marca, etc.</h3>
                 </div>
                 <div class="call">
-                    <button class="botonpink">cotiza flash!</button>
+                    <button class="botonpink" aria-label="Cotizar rápido">cotiza flash!</button>
                 </div>
             </section>
         </section>
     </header>
-    <nav id="navbar">
+
+    <nav id="navbar" aria-label="Menú de navegación principal">
         <ul>
-            <a href="http://www.instagram.com/escalandia" class="logo">
-                <img class="navlogo" src="image/mini_escalandia.png" alt="Logo Escalandia">
+            <a href="http://www.instagram.com/escalandia" class="logo" aria-label="Ir a Instagram de Escalandia">
+                <picture>
+                    <source srcset="image/mini_escalandia.webp" type="image/webp">
+                    <source srcset="image/mini_escalandia.png" type="image/png">
+                    <img class="navlogo" src="image/mini_escalandia.png" alt="Logo Escalandia">
+                </picture>
             </a>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#experiencia">Experiencias</a></li>
-            <li><a href="#servicio">Servicios</a></li>
-            <li><a href="#mision">Misión</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <button class="botonpink tambaleando sacudir">Cotizar</button>
+            <li><a href="#inicio" aria-label="Ir a Inicio">Inicio</a></li>
+            <li><a href="#experiencia" aria-label="Ir a Experiencias">Experiencias</a></li>
+            <li><a href="#servicio" aria-label="Ir a Servicios">Servicios</a></li>
+            <li><a href="#mision" aria-label="Ir a Misión">Misión</a></li>
+            <li><a href="#contacto" aria-label="Ir a Contacto">Contacto</a></li>
+            <button class="botonpink tambaleando sacudir" aria-label="Cotizar">Cotizar</button>
         </ul>
     </nav>
+
     <main>        
         <!-- Sección de experiencias inolvidables -->
-        <section class="experiencias">
-            <div class="contenedorinstantaneas">
+        <section class="experiencias" aria-labelledby="experiencias">
+            <div class="contenedorinstantaneas" aria-label="Galería de imágenes de experiencias">
                 <div class="instantanea rotate-left">
-                    <img src="image/Colegio 2.jpg" alt="escalandiando 1" loading="lazy">
+                    <picture>
+                        <source srcset="image/Colegio2.webp" type="image/webp">
+                        <source srcset="image/Colegio2.jpg" type="image/jpeg">
+                        <img src="image/Colegio2.jpg" alt="escalandiando 1" loading="lazy">
+                    </picture>
                 </div>
                 <div class="instantanea rotate-center">
-                    <img src="image/Colegio 4.jpg" alt="escalandiando 2" loading="lazy">
+                    <picture>
+                        <source srcset="image/Colegio4.webp" type="image/webp">
+                        <source srcset="image/Colegio4.jpg" type="image/jpeg">
+                        <img src="image/Colegio4.jpg" alt="escalandiando 2" loading="lazy">
+                    </picture>
                 </div>
                 <div class="instantanea rotate-right">
-                    <img src="image/Colegio 3.jpg" alt="escalandiando 3" loading="lazy">
+                    <picture>
+                        <source srcset="image/Colegio3.webp" type="image/webp">
+                        <source srcset="image/Colegio3.jpg" type="image/jpeg">
+                        <img src="image/Colegio3.jpg" alt="escalandiando 3" loading="lazy">
+                    </picture>
                 </div>
             </div>
-            <div id="experiencia" class="inolvidables tambaleando">
+            <div id="experiencia" class="inolvidables tambaleando" aria-live="polite">
                 <h2 class="efectobrillo">Momentos Inolvidables</h2>
-                <img class="ig" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" loading="lazy">
-                <a href="http://www.instagram.com/escalandia">
-                    <button class="botonig sacudir">más experiencias</button>
+                <picture>
+                    <source srcset="image/Instagram_icon.webp" type="image/webp">
+                    <source srcset="image/Instagram_icon.png" type="image/png">
+                    <img class="ig" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" loading="lazy">
+                </picture>
+                <a href="http://www.instagram.com/escalandia" aria-label="Ver más en Instagram">
+                    <button class="botonig sacudir" aria-label="Ver más experiencias">más experiencias</button>
                 </a>
             </div>
             <div class="contenedorinstantaneas">
                 <div class="instantanea rotate-left">
-                    <img src="image/Casa 2.jpg" alt="escalandiando 4" loading="lazy">
+                    <picture>
+                        <source srcset="image/Casa2.webp" type="image/webp">
+                        <source srcset="image/Casa2.jpg" type="image/jpeg">
+                        <img src="image/Casa2.jpg" alt="escalandiando 4" loading="lazy">
+                    </picture>
                 </div>
                 <div class="instantanea rotate-center">
-                    <img src="image/slack 1.jpg" alt="escalandiando 5" loading="lazy">
+                    <picture>
+                        <source srcset="image/Slack1.webp" type="image/webp">
+                        <source srcset="image/slack1.jpg" type="image/jpeg">
+                        <img src="image/slack1.jpg" alt="escalandiando 5" loading="lazy">
+                    </picture>
                 </div>
                 <div class="instantanea rotate-right">
-                    <img src="image/Muro Desplome 3.jpg" alt="escalandiando 6" loading="lazy">
+                    <picture>
+                        <source srcset="image/MuroDesplome3.webp" type="image/webp">
+                        <source srcset="image/MuroDesplome3.jpg" type="image/jpeg">
+                        <img src="image/MuroDesplome3.jpg" alt="escalandiando 6" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </section>
 
         <!-- Sección de Servicios -->
-        <section class="servicio-content" id="servicio">
-            <section class="container2">
+        <section class="servicio-content" id="servicio" aria-labelledby="servicio">
+            <section class="container2" aria-label="Servicio Muro de escalada 6m">
                 <div class="serv1">
                     <h2>Muro de escalada 6m</h2>
                 </div>
                 <div class="serv2">
-                    <h3>Características del Muro de Escalada de Escalandia:</h3>
+                    <h3>Detalles del servicio:</h3>
                     <ul>
-                        <li>Altura: 6 metros.</li>
-                        <li>Base: 3m x 2m para estabilidad óptima.</li>
-                        <li>Instalación: 2 horas.</li>
-                        <li>Seguridad: Equipamiento completo y monitores certificados.</li>
-                        <li>Personalización: Espacio para publicidad en dos caras.</li>
+                        <li>6 metros de alto</li>
+                        <li>Funcionamiento: ilimitado</li>
+                        <li>100% SUPERVISADO</li>
+                        <li>Duración: 3 hrs</li>
+                        <li>Servicio a domicilio / Instalación</li>
+                        <li>Requiere terreno nivelado</li>
+                        <li>Equipos certificados: Arneses, cuerda, cascos, elementos de seguridad.</li>
+                        <li>Instalación rápida</li>
+                        <li>Area requerida: 3x3m App.</li>
                     </ul>
                 </div>
                 <div class="serv3">
-                    <p>Escala nuevas alturas con nuestro muro de escalada de 6 metros, perfecto para todo tipo de eventos. Asegurado por expertos, ofrece diversión y aventura sin límites, apto para escaladores de cualquier nivel. ¡Transforma cualquier reunión en una emocionante escalada hacia el cielo!</p>
+                    <p>ESCALA Y ELEVA TÚ EVENTO!</p>
+                    <p>Lleva tú evento a nuevas alturas con nuestro muro de escalada, perfecto para Cumpleaños, colegios o activaciones de Empresa.</p>
+                    <p>PRIORIDAD DE FECHAS A QUIENES RESERVAN PRIMERO (50%)</p>
+                </div>
+                <div class="call2">
+                    <button class="botonpink" aria-label="Cotizar rápido">cotiza flash!</button>
                 </div>
             </section>
-            <section class="container2">
+            <section class="container2" aria-label="Servicio Doble desafío de Slacklines">
                 <div class="serv4">
-                    <h2>Doble desafío de Slacklines</h2>
+                    <h2>Servicio de Slackline</h2>
                 </div>
                 <div class="serv5">
                     <h3>Características del Slackline:</h3>
                     <ul>
+                        <li>2 Estructuras para hacer equilibrio</li>
+                        <li>Funcionamiento: ilimitado</li>
+                        <li>Duración: 3 hrs (Mínimo)</li>
+                        <li>Altura segura (40cm del suelo) perfecta para todas las edades.</li>
                         <li>Longitud: 3 metros, ideal para espacios de eventos.</li>
-                        <li>Altura: Ajustable hasta 40 cm sobre el suelo, perfecta para todas las edades.</li>
-                        <li>Tiempo de Instalación: Menos de 1 hora, maximizando la eficiencia en eventos.</li>
-                        <li>Capacidad: Diseñado para uso individual, fomentando el aprendizaje y la diversión segura.</li>
-                        <li>Seguridad: Equipado con estructuras autosoportantes y almohadillas de seguridad.</li>
-                        <li>Personalización: Opciones de personalización disponibles para eventos temáticos.</li>
+                        <li>Tiempo de Instalación: 20 minutos</li>
+                        <li>Estructuras autosoportantes. (no usamos tus arbolitos)</li>
                     </ul>
                 </div>
                 <div class="serv6">
-                    <p>Transforma tu evento con nuestro servicio de slackline, ideal para mejorar el equilibrio y la concentración en un ambiente de pura diversión. Configurado para ser seguro y desafiante, es la actividad perfecta para que invitados de todas las edades se lancen a una aventura de equilibrio. ¡Prepárate para caminar sobre la línea de la emoción!</p>
+                    <p>HÁZ DE TÚ EVENTO UN DESAFÍO</p>
+                    <p>con nuestro servicio de slackline.</p>
+                    <p>Slackline (Equilibrio sobre una cinta entre 2 puntos). Ideal para mejorar el equilibrio y la concentración en un ambiente de pura diversión.</p>
+                    <p>PRIORIDAD DE FECHAS A QUIENES RESERVAN PRIMERO (50%)</p>
+                </div>
+                <div class="call2">
+                    <button class="botonpink" aria-label="Cotizar rápido">cotiza flash!</button>
                 </div>
             </section>
         </section>
 
-
         <!-- Sección de Misión -->
-        <section id="mision" class="pinkblue">
-            <div class="mision-cont">
-                <img src="image/big_escalandia.png" alt="Logo Escalandia" class="mainlogo sacudir" loading="lazy">
+        <section id="mision" class="pinkblue" aria-labelledby="mision">
+            <div class="mision-cont" aria-label="Misión de Escalandia">
+                <picture>
+                    <source srcset="image/big_escalandia.webp" type="image/webp">
+                    <source srcset="image/big_escalandia.png" type="image/png">
+                    <img src="image/big_escalandia.png" alt="Logo Escalandia" class="mainlogo sacudir" loading="lazy">
+                </picture>
                 <p class="mision">"Nuestra misión es proporcionar experiencias emocionantes de deportes alternativos -como escalada y slackline- fomentando la diversión y unión a través de desafíos seguros."</p>
             </div>
         </section>
+
         <!-- Sección de Contacto -->
-        <section id="contacto" class="contacto">
+        <section id="contacto" class="contacto" aria-labelledby="contacto">
             <h2>Contacto</h2>
-            <form class="formulario">
+            <form class="formulario" aria-labelledby="Formulario de contacto">
                 <fieldset>
                     <legend class="legend">Contáctanos y conversemos</legend>
                     <div class="contenedor-campos">
                         <div class="campo">
                             <label for="nombre">Nombre</label>
-                            <input id="nombre" class="input-text" type="text" placeholder="Tu Nombre" required>
+                            <input id="nombre" class="input-text" type="text" placeholder="Tu Nombre" required aria-required="true">
                         </div>
                         <div class="campo">
                             <label for="telefono">Teléfono</label>
-                            <input id="telefono" class="input-text" type="tel" placeholder="Fono contacto" required>
+                            <input id="telefono" class="input-text" type="tel" placeholder="Fono contacto" required aria-required="true">
                         </div>
                         <div class="campo">
                             <label for="email">Email</label>
-                            <input id="email" class="input-text" type="email" placeholder="Correo" required>
+                            <input id="email" class="input-text" type="email" placeholder="Correo" required aria-required="true">
                         </div>
                         <div class="campo">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" class="input-text" placeholder="Escribe tu mensaje aquí" required></textarea>
+                            <textarea id="mensaje" class="input-text" placeholder="Escribe tu mensaje aquí" required aria-required="true"></textarea>
                         </div>
                     </div>    
                     <div class="enviar">
-                        <input class="botonpink" type="submit" value="Enviar">
+                        <input class="botonpink" type="submit" value="Enviar" aria-label="Enviar formulario">
                     </div>    
                 </fieldset>
             </form>
         </section>
     </main>
+
     <footer>
         <p>Todos los derechos reservados. Piero Nicolini Freelancer</p>
     </footer>
+
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
@@ -196,7 +303,6 @@
             var sound = document.getElementById('backgroundSound');
             sound.play().catch(e => {
                 console.log('Reproducción automática bloqueada por el navegador');
-                // Opcional: Mostrar algún UI que invite al usuario a reproducir manualmente el sonido.
             });
         }
     </script>
