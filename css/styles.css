@@ -86,13 +86,14 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0; /* Remove padding to fit the links properly */
 }
 
-#navbar ul li a {
+#navbar ul a {
     font-weight: 500;
     color: var(--fondo);
     text-decoration: none;
-    padding: 10px 10px;
+    padding: 12px 12px;
     transition: color 0.3s ease;
     text-transform: uppercase;
 }
@@ -106,7 +107,7 @@ nav {
     background-color: var(--fondo) !important;
 }
 
-.scrolled ul li a {
+.scrolled ul a.navi {
     color: var(--pink) !important;
 }
 
@@ -418,7 +419,7 @@ nav {
         justify-content: space-between;
     }
 
-    nav ul li {
+    nav ul .navi {
         display: none;
     }
 
