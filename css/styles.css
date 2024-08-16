@@ -20,6 +20,8 @@ html {
 
 html, body {
     overflow-x: hidden;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 p, h1, h2, h3, legend {
@@ -40,6 +42,10 @@ h2 {
 
 h3 {
     font-size: 3rem;
+}
+
+li {
+    font-size: 2rem;
 }
 
 label {
@@ -77,7 +83,6 @@ nav {
 #navbar ul {
     list-style: none;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -87,13 +92,14 @@ nav {
     font-weight: 500;
     color: var(--fondo);
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     transition: color 0.3s ease;
     text-transform: uppercase;
 }
 
-.navimg {
+.navbar-logo-image {
     width: 200px;
+    min-width: 200px;
 }
 
 .scrolled {
@@ -105,7 +111,7 @@ nav {
 }
 
 /* Sección parallax */
-.parallax-section {
+.hero-section {
     background-image: linear-gradient(rgba(234, 0, 255, 0.589), rgba(251, 255, 0, 0.719)), url(../image/escalandia_hero.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -118,7 +124,7 @@ nav {
 }
 
 /* Contenedor principal */
-.container {
+.hero-container {
     max-width: 120rem;
     width: 95%;
     padding: 10rem 0;
@@ -129,7 +135,7 @@ nav {
 }
 
 /* Estilos específicos de los elementos */
-.muro {
+.hero-text {
     text-align: end;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -137,7 +143,7 @@ nav {
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
-.logo {
+.hero-logo {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
@@ -145,21 +151,21 @@ nav {
     padding: 2rem;
 }
 
-.mainlogo {
+.hero-logo-image {
     min-width: 280px;
     max-width: 500px;
     width: 100%;
     margin: auto;
 }
 
-.info {
+.hero-subtext {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     font-size: 1.5rem;
     text-align: right;
 }
 
-.call {
+.hero-cta {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: flex;
@@ -170,7 +176,7 @@ nav {
 }
 
 /* Animaciones */
-@keyframes tambalear {
+@keyframes wobble {
     0%, 100% { transform: rotate(0deg); }
     20% { transform: rotate(-2deg); }
     40% { transform: rotate(2deg); }
@@ -178,13 +184,13 @@ nav {
     80% { transform: rotate(0deg); }
 }
 
-.tambaleando {
+.animate-wobble {
     display: inline-block;
-    animation: tambalear 5s infinite;
+    animation: wobble 5s infinite;
 }
 
 /* Botones */
-.botonpink, .botonig {
+.btn-primary, .btn-secondary {
     color: var(--mainfont);
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -196,61 +202,61 @@ nav {
     text-decoration: none;
 }
 
-.botonpink {
+.btn-primary {
     background-color: var(--pink);
 }
 
-.botonpink:hover {
+.btn-primary:hover {
     background-color: #9b21ff;
 }
 
-.botonig {
+.btn-secondary {
     background-color: #ffae00;
 }
 
-.botonig:hover {
+.btn-secondary:hover {
     background-color: #fbff07d0;
 }
 
 /* Animaciones de botón */
-@keyframes sacudir {
+@keyframes shake {
     0%, 100% { transform: translateY(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateY(-5px); }
     20%, 40%, 60%, 80% { transform: translateY(5px); }
 }
 
-.sacudir {
-    animation: sacudir 5s ease-in-out 3s infinite;
+.animate-shake {
+    animation: shake 5s ease-in-out 3s infinite;
     display: inline-block;
 }
 
 /* Sección de experiencias */
-.experiencias h2, .experiencias p, .experiencias button {
+.experiences-section h2, .experiences-section p, .experiences-section button {
     text-align: center;
 }
 
-.experiencias h2 {
+.experiences-section h2 {
     font-size: 10rem;
 }
 
-.inolvidables {
+.highlighted-experience {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
 }
 
-.inolvidables img {
+.highlighted-experience img {
     width: 200px;
     height: auto;
     display: block;
 }
 
-.inolvidables a {
+.highlighted-experience a {
     padding: 5rem 0 10rem 0;
 }
 
 /* Contenedor de instantáneas */
-.contenedorinstantaneas {
+.image-gallery {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -259,7 +265,7 @@ nav {
     padding-top: 2rem;
 }
 
-.instantanea {
+.gallery-item {
     background-color: #ffffff;
     border: 1px solid #ececec;
     padding: 10px;
@@ -267,7 +273,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.instantanea img {
+.gallery-item img {
     display: block;
 }
 
@@ -275,30 +281,18 @@ nav {
 .rotate-center { transform: rotate(10deg); }
 .rotate-right { transform: rotate(-10deg); }
 
-.instantanea:hover {
+.gallery-item:hover {
     transform: rotate(0deg);
 }
 
 /* Texto brillante */
-.efectobrillo {
+.text-glow {
     color: #fff;
-    animation: shine 1s infinite alternate;
-}
-
-@keyframes shine {
-    0% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #8400ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #6505ff, 0 0 120px #ff00ff;
-    }
-    50% {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ffb20b, 0 0 70px #ff00ff, 0 0 120px #9e006f;
-    }
-    100% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #2600ff, 0 0 120px #fffb01;
-    }
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #8400ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #6505ff, 0 0 120px #ff00ff;
 }
 
 /* Sección de servicios */
-.servicio-content {
+.services-section {
     margin: 10rem 0;
     background-color: var(--fondo);
     justify-items: center;
@@ -306,7 +300,7 @@ nav {
     justify-content: space-evenly;
 }
 
-.container2 {
+.service-container {
     border-radius: 2rem;
     margin: 2rem;
     background-color: var(--grisclaro);
@@ -314,62 +308,63 @@ nav {
     padding: 0 3rem;
 }
 
-.container2 p {
+.service-container p {
     color: var(--mainfont);
     text-align: start;
 }
 
-.container2 h2 {
+.service-container h2 {
     color: var(--pink);
     text-align: center;
     text-transform: uppercase;
 }
 
-.container2 h3 {
+.service-container h3 {
     color: var(--mainfont);
     font-size: 2rem;
 }
 
-.call2 {
+.service-button {
+    display: block;
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: center;
+    margin: 0 auto;
     padding: 2rem;
 }
 
 /* Secciones de los servicios */
-.serv1, .serv2, .serv3, .serv4, .serv5, .serv6 {
-    display: block;
+.service-header, .service-details, .service-cta, .service-button {
     max-width: 100%;
     margin: 0 auto;
-    display: block;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
 /* Sección de misión */
-.pinkblue {
+.mission-section {
     background: linear-gradient(to bottom, #ff5fcf, hsl(216, 100%, 54%));
     width: 100%;
 }
 
-.mision-cont {
+.mission-container {
     padding: 5rem 20rem;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.mision {
+.mission-text {
     font-size: 3rem;
 }
 
 /* Sección de contacto */
-.contacto h2 {
+.contact-section h2 {
     text-align: center;
     color: var(--pink);
 }
 
-.formulario {
+.contact-form {
     background-color: var(--gris);
     width: min(100rem, 100%);
     border-radius: 2rem;
@@ -377,11 +372,11 @@ nav {
     padding: 2rem;
 }
 
-.formulario fieldset {
+.contact-form fieldset {
     border: none;
 }
 
-.formulario legend {
+.contact-legend {
     text-align: center;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -390,15 +385,15 @@ nav {
     color: white;
 }
 
-.contenedor-campos {
+.form-fields {
     color: white;
 }
 
-.campo {
+.form-field {
     margin-bottom: 1rem;
 }
 
-.campo label {
+.form-field label {
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -413,7 +408,7 @@ nav {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.enviar .botonpink {
+.form-submit .btn-primary {
     width: 100%;
 }
 
@@ -427,11 +422,11 @@ nav {
         display: none;
     }
 
-    .parallax-section {
+    .hero-section {
         background-size: cover;
     }
 
-    .container {
+    .hero-container {
         display: flex;
         padding: 10rem 5rem;
         flex-wrap: wrap;
@@ -440,46 +435,46 @@ nav {
         padding-bottom: 25px;
     }
 
-    .info h2 {
+    .hero-text h2 {
         text-align: center;
     }
 
-    .muro, .info {
+    .hero-text, .hero-subtext {
         margin: 0;
         text-align: center;
     }
 
-    .muro {
+    .hero-text {
         line-height: 1;
     }
 
-    .call {
+    .hero-cta {
         padding: 2rem;
     }
 
-    .contenedorinstantaneas {
+    .image-gallery {
         display: grid;
         align-items: center;
         width: 90%;
     }
 
-    .experiencias h2 {
+    .experiences-section h2 {
         font-size: 5rem;
     }
 
-    .efectobrillo {
+    .text-glow {
         font-size: 5rem;
     }
 
-    .mision-cont {
+    .mission-container {
         padding: 5rem 2rem;
     }
 
-    .servicio-content {
+    .services-section {
         display: grid;
     }
 
-    .container2 {
+    .service-container {
         width: 90%;
     }
 }
