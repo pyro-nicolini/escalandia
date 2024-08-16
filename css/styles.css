@@ -3,6 +3,7 @@
     --blue: #008cff;
     --pink: #ff009d;
     --gris: #757575;
+    --grisclaro: #a8a8a8;
     --oscuro: #272727;
     --fondo: #ffffff;
 }
@@ -56,7 +57,6 @@ footer {
     padding: 1rem;
     font-size: 1rem;
 }
-
 
 footer p{
     font-size: 1.5rem;
@@ -293,11 +293,97 @@ nav {
     }
 }
 
+ul {
+    list-style-type: square; /* Opciones comunes incluyen disc, circle, square, none, etc. */
+}
+
+ol {
+    list-style-type: upper-roman; /* Opciones incluyen lower-alpha, upper-alpha, lower-roman, upper-roman, etc. */
+}
+
+
+
+.servicio-content {
+    background-color: var(--fondo);
+    justify-items: center;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container2 {
+    display: grid;
+    border-radius: 2rem;
+    margin: 2rem;
+    background-color: var(--grisclaro);
+    max-width: 700px;
+    padding: 0 3rem;
+
+}
+
+.container2 p {
+    color: var(--mainfont);
+    text-align: justify;
+}
+
+.container2 h2 {
+    color: var(--blue);
+    text-align: center;
+}
+
+.container2 h3 {
+    color: var(--mainfont);
+    font-size: 2rem;
+}
+
+.serv1,.serv2,.serv3,.serv4, .serv5,.serv6 {
+    max-width: 100&;
+    margin:0 auto;
+}
+
+.serv1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.serv2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.serv3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 3;
+}
+
+.serv4 {
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+}
+
+.serv5 {
+    grid-column: 2 / 2;
+    grid-row: 2 / 3;
+}
+
+.serv6 {
+    grid-column: 2 / 2;
+    grid-row: 3 / 3;
+}
+
+
+
+
+
+
+
+
+
 .pinkblue {
     background: linear-gradient(to bottom, #ff5fcf, hsl(216, 100%, 54%));
     width: 100%;
 }
-
 
 .mision-cont {
     padding: 5rem 20rem;
@@ -419,4 +505,11 @@ nav {
     .mision-cont {
         padding: 5rem 2rem;
     }
+
+    .servicio-content {
+        display: grid;
+    }
+    
+
+
 }

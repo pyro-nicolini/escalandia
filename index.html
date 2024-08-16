@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- Preload y carga de hojas de estilo -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
-
     <!-- Preconexiones para optimizar la carga de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <!-- Carga de fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto&family=Tilt+Warp&display=swap" rel="stylesheet">
     
     <title>Escalandia - Muros Móviles para tu evento</title>
-
     <!-- Metadatos para SEO -->
     <meta name="description" content="Arriendo de muros de escalada y slacklines para eventos como cumpleaños, activaciones de marca, y festivales. Contáctanos para cotizar.">
     <meta name="keywords" content="muro de escalada a domicilio, slackline para eventos, alquiler muro de escalada, escalada para eventos escolares, actvidades al aire libre, escalada segura para eventos, actividades corporativas al aire libre, escalada, slackline cumpleaños, diversión segura para eventos, eventos de escalada tú casa, slackline instalación, muro de escalada móvil, eventos deportivos al aire libre, entretenimiento para eventos en tú hogar, arriendo muros de escalada para cumpleaños al aire libre">
     <meta name="author" content="Piero Nicolini">
 </head>
-
-<body>
-
+<body onload="playSound();">
     <header>
         <!-- Sección de parallax -->
         <section class="parallax-section" id="inicio">
@@ -44,20 +37,7 @@
                 </div>
             </section>
         </section>
-        
-        <!-- Script para cambiar la navegación al hacer scroll -->
-        <script>
-            window.addEventListener('scroll', function() {
-                const navbar = document.getElementById('navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-        </script>
     </header>
-
     <nav id="navbar">
         <ul>
             <a href="http://www.instagram.com/escalandia" class="logo">
@@ -65,14 +45,13 @@
             </a>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#experiencia">Experiencias</a></li>
-            <li><a href="#mision">Misión</a></li>
             <li><a href="#servicio">Servicios</a></li>
+            <li><a href="#mision">Misión</a></li>
             <li><a href="#contacto">Contacto</a></li>
             <button class="botonpink tambaleando sacudir">Cotizar</button>
         </ul>
     </nav>
-
-    <main>
+    <main>        
         <!-- Sección de experiencias inolvidables -->
         <section class="experiencias">
             <div class="contenedorinstantaneas">
@@ -105,7 +84,49 @@
                 </div>
             </div>
         </section>
-        
+
+        <!-- Sección de Servicios -->
+        <section class="servicio-content" id="servicio">
+            <section class="container2">
+                <div class="serv1">
+                    <h2>Muro de escalada 6m</h2>
+                </div>
+                <div class="serv2">
+                    <h3>Características del Muro de Escalada de Escalandia:</h3>
+                    <ul>
+                        <li>Altura: 6 metros.</li>
+                        <li>Base: 3m x 2m para estabilidad óptima.</li>
+                        <li>Instalación: 2 horas.</li>
+                        <li>Seguridad: Equipamiento completo y monitores certificados.</li>
+                        <li>Personalización: Espacio para publicidad en dos caras.</li>
+                    </ul>
+                </div>
+                <div class="serv3">
+                    <p>Escala nuevas alturas con nuestro muro de escalada de 6 metros, perfecto para todo tipo de eventos. Asegurado por expertos, ofrece diversión y aventura sin límites, apto para escaladores de cualquier nivel. ¡Transforma cualquier reunión en una emocionante escalada hacia el cielo!</p>
+                </div>
+            </section>
+            <section class="container2">
+                <div class="serv4">
+                    <h2>Doble desafío de Slacklines</h2>
+                </div>
+                <div class="serv5">
+                    <h3>Características del Slackline:</h3>
+                    <ul>
+                        <li>Longitud: 3 metros, ideal para espacios de eventos.</li>
+                        <li>Altura: Ajustable hasta 40 cm sobre el suelo, perfecta para todas las edades.</li>
+                        <li>Tiempo de Instalación: Menos de 1 hora, maximizando la eficiencia en eventos.</li>
+                        <li>Capacidad: Diseñado para uso individual, fomentando el aprendizaje y la diversión segura.</li>
+                        <li>Seguridad: Equipado con estructuras autosoportantes y almohadillas de seguridad.</li>
+                        <li>Personalización: Opciones de personalización disponibles para eventos temáticos.</li>
+                    </ul>
+                </div>
+                <div class="serv6">
+                    <p>Transforma tu evento con nuestro servicio de slackline, ideal para mejorar el equilibrio y la concentración en un ambiente de pura diversión. Configurado para ser seguro y desafiante, es la actividad perfecta para que invitados de todas las edades se lancen a una aventura de equilibrio. ¡Prepárate para caminar sobre la línea de la emoción!</p>
+                </div>
+            </section>
+        </section>
+
+
         <!-- Sección de Misión -->
         <section id="mision" class="pinkblue">
             <div class="mision-cont">
@@ -113,12 +134,6 @@
                 <p class="mision">"Nuestra misión es proporcionar experiencias emocionantes de deportes alternativos -como escalada y slackline- fomentando la diversión y unión a través de desafíos seguros."</p>
             </div>
         </section>
-
-        <section id="servicio" class="pinkblue">
-            <div>
-            </div>
-        </section>
-
         <!-- Sección de Contacto -->
         <section id="contacto" class="contacto">
             <h2>Contacto</h2>
@@ -150,11 +165,19 @@
             </form>
         </section>
     </main>
-
     <footer>
         <p>Todos los derechos reservados. Piero Nicolini Freelancer</p>
     </footer>
-
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -166,7 +189,15 @@
             });
         });
     </script>
-
+    <audio id="backgroundSound" src="/sound/wow.mp3" preload="auto"></audio>
+    <script>
+        function playSound() {
+            var sound = document.getElementById('backgroundSound');
+            sound.play().catch(e => {
+                console.log('Reproducción automática bloqueada por el navegador');
+                // Opcional: Mostrar algún UI que invite al usuario a reproducir manualmente el sonido.
+            });
+        }
+    </script>
 </body>
-
 </html>
