@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Preload y carga de hojas de estilo -->
     <link rel="preload" href="css/styles.css" as="style">
+    <audio preload="auto" id="backgroundSound" src="/sound/wow.mp3"></audio>
+
     <link rel="stylesheet" href="css/styles.css">
     <!-- Preconexiones para optimizar la carga de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,7 +191,6 @@
             });
         });
     </script>
-    <audio id="backgroundSound" src="/sound/wow.mp3" preload="auto"></audio>
     <script>
         function playSound() {
             var sound = document.getElementById('backgroundSound');
